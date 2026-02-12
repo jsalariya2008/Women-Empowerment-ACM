@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Share Your Story | Registration Portal</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Playfair+Display:wght@400;700&family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --deep-plum: #3B1F3B;         
+            --rich-mauve: #5E455E;        
+            --soft-cream: #F0EBE3;        
+            --copper-foil: #B87333;       
+            --white: #FFFFFF;             
+        }
+
+        * { box-sizing: border-box; margin:0; padding:0; }
+        body { font-family: 'Poppins', sans-serif; color: var(--soft-cream); background-color: var(--deep-plum); line-height:1.6; }
+        h1,h2,h3 { font-family: 'Playfair Display', serif; font-weight: 800; }
+
+        .main-header {
+            display: flex; justify-content: space-between; align-items: center;
+            padding: 1.5rem 8%; background-color: var(--rich-mauve); color: var(--white);
+            position: sticky; top:0; z-index:1000; box-shadow: 0 4px 20px rgba(0,0,0,0.9); border-bottom:3px solid var(--copper-foil);
+        }
+        .logo { font-family: 'Playfair Display', serif; font-size: 1.8rem; font-weight:800; color: var(--copper-foil); letter-spacing:2px; }
+        .main-nav ul { list-style:none; display:flex; gap:2.5rem; }
+        .main-nav a { text-decoration:none; color: var(--soft-cream); font-weight:600; padding-bottom:4px; transition:0.3s; }
+        .main-nav a:hover { color: var(--copper-foil); border-bottom:2px solid var(--copper-foil); }
+
+        .portal-container {
+            min-height: 90vh; display:flex; justify-content:center; align-items:center; padding:5rem 8%;
+        }
+
+        .portal-step {
+            width: 100%; max-width:700px; background-color: var(--rich-mauve);
+            padding:3rem; border-radius:15px; box-shadow: 0 0 40px rgba(0,0,0,0.5);
+            transition: all 0.5s ease;
+            display: none; opacity:0;
+        }
+        .portal-step:target,
+        #registration-form { display:block; opacity:1; }
+
+        .portal-form input, .portal-form textarea {
+            padding:15px; border:none; border-radius:8px;
+            background-color: var(--soft-cream); color: var(--deep-plum);
+            font-size:1rem; border:1px solid var(--copper-foil); width:100%;
+        }
+        .portal-form input:focus, .portal-form textarea:focus { outline:none; box-shadow: 0 0 0 3px var(--copper-foil); }
+
+        .cta-button {
+            display:inline-block; padding:1rem 3rem; background-color: var(--copper-foil);
+            color: var(--deep-plum); font-weight:800; text-decoration:none; border-radius:50px;
+            text-transform: uppercase; letter-spacing:1px; box-shadow:0 4px 15px rgba(0,0,0,0.5); border:2px solid var(--soft-cream);
+            cursor:pointer;
+        }
+        .cta-button:hover { background-color: var(--soft-cream); color: var(--deep-plum); box-shadow:0 8px 25px rgba(184,115,51,0.9); }
+
+        .choice-grid { display:grid; grid-template-columns:repeat(auto-fit, minmax(180px,1fr)); gap:20px; }
+        .choice-grid a { text-decoration:none; display:block; background-color: var(--deep-plum); padding:30px 20px; border-radius:10px; box-shadow:0 0 10px rgba(0,0,0,0.5); text-align:center; transition:0.3s; }
+        .choice-grid a:hover { transform:scale(1.05); box-shadow:0 0 20px var(--copper-foil); border-color: var(--copper-foil); }
+        .choice-grid h3 { color: var(--copper-foil); margin-bottom:0.5rem; }
+        .choice-grid p { color: var(--soft-cream); font-size:0.9rem; }
+
+        .main-footer { background-color: var(--rich-mauve); color: var(--white); text-align:center; padding:2rem 8%; border-top:5px solid var(--copper-foil); }
+        .footer-content { display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:1.5rem; }
+        .social-links a { color: var(--white); text-decoration:none; margin-left:1.5rem; font-weight:600; }
+        .social-links a:hover { color: var(--copper-foil); text-shadow:0 0 5px var(--copper-foil); }
+
+        @media(max-width:768px){
+            h2 { font-size:2rem; }
+            .main-header { flex-direction:column; padding:1rem 5%; }
+            .main-nav ul { flex-wrap:wrap; justify-content:center; margin-top:1rem; gap:1rem; }
+            .portal-container { padding:3rem 5%; }
+            .choice-grid { grid-template-columns:1fr; }
+        }
+    </style>
+</head>
+<body>
+
+<header class="main-header">
+    <div class="logo">HER VOICE</div>
+    <nav class="main-nav">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="index.html#stories">Stories</a></li>
+            <li><a href="hub.html">Empowerment Hub</a></li>
+            <li><a href="portal.html">Share Your Story</a></li>
+            <li><a href="directory.html">Directory</a></li>
+            <li><a href="index.html#community">Community</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main class="portal-container">
+
+    <!-- STEP 1: Registration Form -->
+    <div id="registration-form" class="portal-step">
+        <h2 style="color: var(--copper-foil);">1. Register to Share Your Voice</h2>
+        <p style="text-align:center; margin-bottom:2rem;">Help us verify your identity before contributing to the movement.</p>
+        <form action="#contribution-choice" method="get" class="portal-form" style="display:grid; gap:15px;">
+            <input type="text" name="name" placeholder="Full Name" required />
+            <input type="tel" name="phone" placeholder="Phone Number" required />
+            <input type="date" name="dob" placeholder="Date of Birth" required />
+            <textarea name="address" placeholder="Residential Address" required rows="2"></textarea>
+            <input type="text" name="father-name" placeholder="Father's Name" />
+            <input type="text" name="profession" placeholder="Your Profession" />
+            <button type="submit" class="cta-button" style="margin-top:20px;">Register & Choose Contribution &rarr;</button>
+        </form>
+    </div>
+
+    <!-- STEP 2: Contribution Choice Hub -->
+    <div id="contribution-choice" class="portal-step">
+        <a href="#registration-form" style="float:right; text-decoration:none; color:var(--copper-foil); font-weight:600; font-size:0.9rem;">&larr; Back to Registration</a>
+        <h2 style="color: var(--copper-foil);">2. Choose Your Contribution</h2>
+        <p style="text-align:center; margin-bottom:3rem;">How would you like to contribute to the HER VOICE community?</p>
+        <div class="choice-grid">
+            <a href="#story-share"><h3>Share My Story</h3><p>Inspire the world with your personal journey of resilience and strength.</p></a>
+            <a href="#business-submission"><h3>List My Business</h3><p>Promote your woman-led venture in our professional directory.</p></a>
+            <a href="#movement-form"><h3>Start a Movement</h3><p>Submit ideas for local or global women's initiatives and advocacy.</p></a>
+        </div>
+    </div>
+
+    <!-- STEP 3A: Story Submission Form -->
+    <div id="story-share" class="portal-step">
+        <a href="#contribution-choice" style="float:right; text-decoration:none; color:var(--copper-foil); font-weight:600; font-size:0.9rem;">&larr; Back to Choices</a>
+        <h2 style="color: var(--copper-foil);">3A. Submit Your Story</h2>
+        <form action="#" method="post" class="portal-form" style="display:grid; gap:15px;">
+            <input type="text" name="story-title" placeholder="Story Title" required />
+            <textarea name="story-content" placeholder="Write your full inspiring story here..." rows="12" required></textarea>
+            <button type="submit" class="cta-button" style="margin-top:20px;">Final Submission &rarr;</button>
+        </form>
+    </div>
+
+    <!-- STEP 3B: Business Submission Form -->
+    <div id="business-submission" class="portal-step">
+        <a href="#contribution-choice" style="float:right; text-decoration:none; color:var(--copper-foil); font-weight:600; font-size:0.9rem;">&larr; Back to Choices</a>
+        <h2 style="color: var(--copper-foil);">3B. List Your Business</h2>
+        <form action="#" method="post" class="portal-form" style="display:grid; gap:15px;">
+            <input type="text" name="business-name" placeholder="Business Name" required />
+            <input type="text" name="category" placeholder="Category" required />
+            <input type="url" name="website" placeholder="Website URL (Optional)" />
+            <textarea name="pitch" placeholder="Short Business Description" rows="5" required></textarea>
+            <button type="submit" class="cta-button" style="margin-top:20px;">Submit Listing &rarr;</button>
+        </form>
+    </div>
+
+    <!-- STEP 3C: Movement Submission Form -->
+    <div id="movement-form" class="portal-step">
+        <a href="#contribution-choice" style="float:right; text-decoration:none; color:var(--copper-foil); font-weight:600; font-size:0.9rem;">&larr; Back to Choices</a>
+        <h2 style="color: var(--copper-foil);">3C. Start a Movement</h2>
+        <form action="#" method="post" class="portal-form" style="display:grid; gap:15px;">
+            <input type="text" name="movement-name" placeholder="Proposed Movement Title" required />
+            <input type="text" name="area" placeholder="Focus Area" required />
+            <textarea name="description" placeholder="Describe the goal and proposed actions." rows="8" required></textarea>
+            <button type="submit" class="cta-button" style="margin-top:20px;">Submit Movement Idea &rarr;</button>
+        </form>
+    </div>
+
+</main>
+
+<footer class="main-footer">
+    <div class="footer-content">
+        <p>&copy; 2025 HER VOICE. All rights reserved. | <span style="color:var(--copper-foil);">Lead. Inspire. Create.</span></p>
+        <div class="social-links">
+            <a href="#">Instagram</a>
+            <a href="#">Facebook</a>
+            <a href="hub.html">Resources</a>
+        </div>
+    </div>
+</footer>
+
+</body>
+</html>
