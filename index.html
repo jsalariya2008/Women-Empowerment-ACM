@@ -1,0 +1,1681 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rise. Lead. Inspire. | Empowering Women</title>
+    
+    <!-- Load custom fonts from Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Playfair+Display:wght@400;700&family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
+
+    <!-- CSS Styling (Pure CSS & HTML Only) - Enhanced Modern Design -->
+    <style>
+        /* --- Global Styles & Typography (ENHANCED MODERN THEME) --- */
+        :root {
+            /* Brighter purple palette */
+            --deep-plum: #32126D;         /* Primary Body Background (Vibrant deep purple) */
+            --rich-mauve: #5521B5;        /* Card/Secondary Background (bright indigo/violet) */
+            --soft-cream: #F8F5FF;        /* Light lavender for readable text */
+            --copper-foil: #A855F7;       /* Accent: vivid violet */
+            --white: #FFFFFF;             /* Pure White for highest contrast elements */
+            --gradient-primary: linear-gradient(135deg, #32126D 0%, #5521B5 100%);
+            --gradient-accent: linear-gradient(135deg, #A855F7 0%, #C084FC 100%);
+            --gradient-hero: linear-gradient(135deg, rgba(50, 18, 109, 0.9) 0%, rgba(85, 33, 181, 0.8) 100%);
+            --shadow-soft: 0 8px 32px rgba(0, 0, 0, 0.12);
+            --shadow-medium: 0 16px 48px rgba(0, 0, 0, 0.24);
+            --shadow-strong: 0 24px 64px rgba(0, 0, 0, 0.36);
+            --border-radius-sm: 8px;
+            --border-radius-md: 16px;
+            --border-radius-lg: 24px;
+            --transition-smooth: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            --transition-bounce: all 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+        }
+
+        /* --- Enhanced Keyframe Animations --- */
+        @keyframes pulse {
+            0% { transform: scale(1); box-shadow: var(--shadow-soft); }
+            50% { transform: scale(1.05); box-shadow: var(--shadow-medium); }
+            100% { transform: scale(1); box-shadow: var(--shadow-soft); }
+        }
+        @keyframes fade-in-up {
+            from { opacity: 0; transform: translateY(40px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes fade-in-left {
+            from { opacity: 0; transform: translateX(-40px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+        @keyframes fade-in-right {
+            from { opacity: 0; transform: translateX(40px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+        @keyframes subtle-shine { 
+            0% { text-shadow: 0 0 8px var(--copper-foil), 0 0 16px rgba(255, 255, 255, 0.1); }
+            50% { text-shadow: 0 0 12px var(--copper-foil), 0 0 24px rgba(255, 255, 255, 0.3); }
+            100% { text-shadow: 0 0 8px var(--copper-foil), 0 0 16px rgba(255, 255, 255, 0.1); }
+        }
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+        @keyframes shimmer {
+            0% { background-position: -200% 0; }
+            100% { background-position: 200% 0; }
+        }
+        
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            transition: var(--transition-smooth);
+        }
+
+        html {
+            scroll-behavior: smooth;
+            font-size: 16px;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: var(--soft-cream);
+            background: var(--gradient-primary);
+            line-height: 1.
+            overflow-x: hidden;
+            font-weight: 400;
+            letter-spacing: 0.02em;
+        }
+
+        /* Scrollbar Styling */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: var(--deep-plum);
+        }
+        ::-webkit-scrollbar-thumb {
+            background: var(--gradient-accent);
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--copper-foil);
+        }
+
+        h1, h2, h3 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            line-height: 1.2;
+        }
+
+        h1 {
+            font-size: clamp(2.8rem, 7vw, 5rem);
+            color: var(--white);
+            margin-bottom: 2rem;
+            /* Stronger glowing effect while staying readable */
+            text-shadow: 0 0 10px rgba(255,255,255,0.9), 0 0 24px rgba(200, 132, 252, 0.9), 0 0 40px rgba(168, 85, 247, 0.6);
+            letter-spacing: 1px;
+            animation: fade-in-up 1.2s ease-out;
+        }
+
+        h2 {
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            text-align: center;
+            margin-bottom: 3rem;
+            position: relative;
+            padding-bottom: 1rem;
+            color: var(--copper-foil);
+            animation: fade-in-up 1s ease-out;
+            font-weight: 600;
+        }
+
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 120px;
+            height: 4px;
+            background: var(--gradient-accent);
+            border-radius: 2px;
+            box-shadow: 0 0 20px rgba(198, 123, 58, 0.8); 
+        }
+
+        h3 {
+            font-size: clamp(1.4rem, 3vw, 2rem);
+            color: var(--white);
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        p {
+            font-family: 'Poppins', sans-serif;
+            color: var(--soft-cream);
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+        }
+        
+        section {
+            padding: 6rem 8%;
+            background: var(--gradient-primary);
+            animation: fade-in-up 1.2s ease-out;
+            border-bottom: 1px solid rgba(240, 235, 227, 0.08); 
+            position: relative;
+            overflow: hidden;
+        }
+
+        section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: var(--gradient-accent);
+            opacity: 0.3;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 1.2rem 3.5rem;
+            background: var(--gradient-accent);
+            color: var(--white);
+            font-weight: 700;
+            text-decoration: none;
+            border-radius: var(--border-radius-lg);
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            border: 2px solid transparent;
+            animation: pulse 3s infinite ease-in-out; 
+            transition: var(--transition-bounce);
+            position: relative;
+            overflow: hidden;
+            font-size: 1rem;
+            box-shadow: var(--shadow-medium);
+        }
+
+        .cta-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 0.5s;
+        }
+
+        .cta-button:hover::before {
+            left: 100%;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px) scale(1.05); 
+            box-shadow: var(--shadow-strong);
+            background: linear-gradient(135deg, #E8A87C 0%, #C67B3A 100%);
+            animation: none; 
+        }
+
+        /* --- Enhanced Header & Navigation --- */
+        .main-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 2rem 8%;
+            background: rgba(74, 58, 74, 0.95);
+            backdrop-filter: blur(20px);
+            color: var(--white);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: var(--shadow-medium);
+            border-bottom: 2px solid var(--copper-foil);
+            transition: var(--transition-smooth);
+        }
+
+        .main-header.scrolled {
+            background: rgba(45, 27, 45, 0.98);
+            padding: 1.5rem 8%;
+        }
+
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            font-weight: 700;
+            background: var(--gradient-accent);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            letter-spacing: 2px;
+            animation: subtle-shine 4s infinite ease-in-out; 
+            transition: var(--transition-smooth);
+        }
+
+        .logo:hover {
+            transform: scale(1.05);
+        }
+
+        .main-nav ul {
+            list-style: none;
+            display: flex;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .main-nav a {
+            text-decoration: none;
+            color: var(--soft-cream);
+            font-weight: 600;
+            transition: var(--transition-smooth);
+            padding: 0.5rem 1rem;
+            border-radius: var(--border-radius-sm);
+            position: relative;
+            font-size: 1rem;
+        }
+        
+        .main-nav a[href="index.html"] {
+            background: var(--gradient-accent);
+            color: var(--white);
+            box-shadow: var(--shadow-soft);
+        }
+
+        .main-nav a:hover {
+            color: var(--copper-foil);
+            background: rgba(198, 123, 58, 0.1);
+            transform: translateY(-2px);
+        }
+
+        .main-nav a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            width: 0;
+            height: 2px;
+            background: var(--gradient-accent);
+            transition: var(--transition-smooth);
+            transform: translateX(-50%);
+        }
+
+        .main-nav a:hover::after {
+            width: 80%;
+        }
+
+        /* --- Enhanced Hero Section with Video Background --- */
+        .hero-section {
+            position: relative;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: var(--white);
+            overflow: hidden;
+            background: var(--gradient-primary); 
+            perspective: 1000px; 
+            background-attachment: fixed; 
+        }
+
+        .hero-video-background {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            height: auto;
+            transform: translate(-50%, -50%) scale(1.1); 
+            object-fit: cover;
+            z-index: -2;
+            opacity: 0.4; 
+            filter: brightness(0.7) contrast(1.2);
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 90%;
+            background: rgba(45, 27, 45, 0.3); 
+            padding: 5rem; 
+            border-radius: var(--border-radius-lg);
+            backdrop-filter: blur(20px); 
+            border: 2px solid rgba(255, 255, 255, 0.2); 
+            box-shadow: var(--shadow-strong); 
+            animation: fade-in-up 1.8s ease-out;
+            transform-style: preserve-3d; 
+            transform: translateZ(50px); 
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-content::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: var(--gradient-hero);
+            z-index: -1;
+            border-radius: var(--border-radius-lg);
+        }
+
+        .hero-content h1 {
+            margin-bottom: 2rem;
+            animation: fade-in-up 1.5s ease-out 0.3s both;
+        }
+
+        .hero-content p {
+            font-size: 1.3rem;
+            margin-bottom: 3rem;
+            animation: fade-in-up 1.5s ease-out 0.6s both;
+            color: var(--soft-cream);
+        }
+
+        .hero-content .cta-button {
+            animation: fade-in-up 1.5s ease-out 0.9s both;
+        }
+
+        /* --- Enhanced Stories Section (Modern Glassmorphism Cards) --- */
+        .stories-section {
+            background: var(--gradient-primary);
+            color: var(--soft-cream);
+            position: relative;
+        }
+        .stories-section p { color: var(--soft-cream); }
+
+        .story-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 3rem; 
+            perspective: 1000px; 
+        }
+
+        .story-card {
+            background: rgba(74, 58, 74, 0.4);
+            backdrop-filter: blur(20px);
+            color: var(--soft-cream);
+            border-radius: var(--border-radius-lg);
+            box-shadow: var(--shadow-medium);
+            overflow: hidden;
+            text-align: center;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transform-style: preserve-3d;
+            transition: var(--transition-smooth);
+            position: relative;
+            animation: fade-in-up 1s ease-out;
+        }
+
+        .story-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: var(--gradient-accent);
+            opacity: 0;
+            transition: var(--transition-smooth);
+            z-index: -1;
+        }
+
+        .story-card:hover {
+            transform: translateY(-20px) rotateX(5deg) rotateY(5deg); 
+            box-shadow: var(--shadow-strong);
+            border-color: var(--copper-foil);
+        }
+
+        .story-card:hover::before {
+            opacity: 0.1;
+        }
+
+        .story-portrait {
+            width: 100%;
+            height: 350px;
+            display: block;
+            object-fit: cover;
+            border-bottom: 3px solid var(--copper-foil);
+            transition: var(--transition-smooth);
+            filter: brightness(0.9) contrast(1.1);
+        }
+        
+        .story-card:hover .story-portrait {
+            transform: scale(1.05); 
+            filter: brightness(1) contrast(1.2);
+        }
+
+        .story-text {
+            padding: 2.5rem;
+            position: relative;
+        }
+
+        .story-text h3 {
+            font-family: 'Libre Baskerville', serif;
+            color: var(--white);
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+
+        .story-text p {
+            font-size: 1rem;
+            line-height: 1.7;
+            margin-bottom: 1rem;
+        }
+
+        .story-text p.font-bold {
+            font-weight: 700;
+            color: var(--copper-foil);
+            font-size: 1.1rem;
+            font-style: italic;
+        }
+
+        .read-more {
+            display: inline-block;
+            margin-top: 2rem;
+            color: var(--copper-foil);
+            font-weight: 700;
+            text-decoration: none;
+            transition: var(--transition-smooth);
+            position: relative;
+            padding: 0.5rem 1rem;
+            border-radius: var(--border-radius-sm);
+            background: rgba(198, 123, 58, 0.1);
+        }
+        
+        .read-more::after { 
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            width: 0;
+            height: 2px;
+            background: var(--gradient-accent);
+            transition: var(--transition-smooth);
+            transform: translateX(-50%);
+        }
+
+        .read-more:hover {
+            color: var(--white);
+            background: rgba(198, 123, 58, 0.2);
+            transform: translateY(-2px);
+        }
+        
+        .read-more:hover::after {
+            width: 80%;
+        }
+        
+        /* --- Enhanced Documentaries Section --- */
+        .documentaries-section {
+            background: var(--gradient-primary);
+            padding: 6rem 8%;
+            text-align: center;
+            position: relative;
+        }
+        .documentaries-section p { color: var(--soft-cream); }
+
+        .documentary-grid {
+            display: flex;
+            justify-content: center;
+            gap: 4rem;
+            flex-wrap: wrap;
+            margin-top: 4rem;
+        }
+
+        .documentary-item {
+            background: rgba(74, 58, 74, 0.4);
+            backdrop-filter: blur(20px);
+            border-radius: var(--border-radius-lg);
+            box-shadow: var(--shadow-medium);
+            overflow: hidden;
+            max-width: 450px;
+            width: 100%;
+            text-align: center;
+            transition: var(--transition-smooth);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            position: relative;
+            animation: fade-in-up 1s ease-out;
+        }
+
+        .documentary-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: var(--gradient-accent);
+            opacity: 0;
+            transition: var(--transition-smooth);
+            z-index: -1;
+        }
+
+        .documentary-item:hover {
+            transform: translateY(-15px) scale(1.02);
+            box-shadow: var(--shadow-strong);
+            border-color: var(--copper-foil);
+        }
+
+        .documentary-item:hover::before {
+            opacity: 0.1;
+        }
+
+        .documentary-item video {
+            width: 100%;
+            height: auto;
+            display: block;
+            border-bottom: 3px solid var(--copper-foil);
+            transition: var(--transition-smooth);
+        }
+
+        .documentary-item:hover video {
+            transform: scale(1.02);
+        }
+
+        .documentary-info {
+            padding: 2rem;
+            position: relative;
+        }
+
+        .documentary-info h3 {
+            font-family: 'Libre Baskerville', serif;
+            color: var(--white);
+            margin-bottom: 1rem;
+            font-size: 1.4rem;
+        }
+
+        .documentary-info p {
+            font-size: 1rem;
+            line-height: 1.7;
+            color: var(--soft-cream);
+        }
+        
+        /* --- Trailblazers Map Section (Pin Pop Animation) --- */
+        .trailblazers-section {
+            background-color: var(--deep-plum);
+            text-align: center;
+        }
+
+        .map-container-wrapper {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            gap: 4rem;
+            margin-top: 3rem;
+            flex-wrap: wrap;
+        }
+
+        .map-wrapper {
+            flex-basis: 450px;
+            height: 500px;
+            background-color: var(--rich-mauve);
+            border-radius: 15px;
+            position: relative;
+            padding: 2rem;
+            box-shadow: 0 0 0 8px var(--deep-plum), 0 0 30px var(--copper-foil);
+            border: 2px solid var(--copper-foil);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            
+            /* Background map image */
+            background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/3/30/India_Administrative_Divisions_-_en.svg/800px-India_Administrative_Divisions_-_en.svg.png');
+            background-size: cover; 
+            background-position: center;
+            background-repeat: no-repeat;
+            transition: all 0.5s ease-in-out;
+        }
+
+        /* Subtle overlay to improve pin contrast on varying map colors */
+        .map-wrapper::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border-radius: 15px;
+            background: radial-gradient(ellipse at center, rgba(0,0,0,0.15) 0%, rgba(0,0,0,0.35) 100%);
+            pointer-events: none;
+        }
+        
+        .map-wrapper:hover {
+            transform: scale(1.02);
+            box-shadow: 0 0 0 8px var(--rich-mauve), 0 0 40px var(--copper-foil);
+        }
+        
+        .abstract-map {
+            position: relative;
+            width: 100%;
+            height: 100%;
+        }
+
+        .map-state {
+            position: absolute;
+            width: 35px; 
+            height: 35px;
+            border-radius: 50%;
+            background-color: var(--copper-foil); 
+            border: 4px solid var(--white); 
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            font-size: 0.75rem;
+            font-weight: 800;
+            color: var(--deep-plum);
+            text-decoration: none;
+            cursor: pointer;
+            transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 0 15px var(--copper-foil);
+            z-index: 10;
+            opacity: 0.9;
+            text-indent: -9999px;
+        }
+
+        .map-state:hover {
+            transform: scale(2.2); 
+            background-color: var(--white);
+            border-color: var(--copper-foil);
+            color: var(--deep-plum);
+            opacity: 1;
+            z-index: 20;
+            text-indent: 0;
+            font-size: 0.5rem;
+        }
+        
+        /* Map Pin Positions */
+        #maharashtra { top: 55%; left: 35%; }
+        #tamilnadu { bottom: 15%; left: 50%; }
+        #kerala { bottom: 20%; left: 38%; }
+        #westbengal { top: 40%; right: 30%; }
+        #delhi { top: 25%; left: 45%; }
+        #rajasthan { top: 38%; left: 25%; }
+        #gujarat { top: 50%; left: 18%; }
+        #punjab { top: 20%; left: 35%; }
+        
+        .state-info-card {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.98); 
+            z-index: 1000;
+            visibility: hidden;
+            opacity: 0;
+            transition: opacity 0.5s ease, visibility 0.5s ease;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 2rem;
+            color: var(--white);
+            text-align: left;
+            overflow-y: auto;
+        }
+
+        .state-info-card:target {
+            visibility: visible;
+            opacity: 1;
+        }
+
+        .card-content {
+            background-color: var(--deep-plum); 
+            color: var(--white);
+            padding: 3rem;
+            border-radius: 12px;
+            max-width: 600px;
+            width: 100%;
+            box-shadow: 0 0 40px var(--copper-foil);
+            position: relative;
+            transform: scale(0.8);
+            transition: transform 0.5s cubic-bezier(0.2, 0.8, 0.2, 1);
+            border: 1px solid var(--copper-foil);
+        }
+
+        .state-info-card:target .card-content {
+            transform: scale(1);
+        }
+        
+        .close-button {
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            font-size: 2.5rem;
+            text-decoration: none;
+            color: var(--white);
+            line-height: 1;
+            font-weight: 300;
+            transition: color 0.3s, transform 0.3s ease-in-out;
+        }
+        .close-button:hover {
+            color: var(--copper-foil);
+            transform: rotate(90deg);
+        }
+
+        .women-list h4 {
+            font-family: 'Libre Baskerville', serif;
+            color: var(--copper-foil);
+            margin-top: 1.5rem;
+        }
+
+        .women-list p {
+            font-size: 0.9rem;
+            color: var(--soft-cream);
+            margin-bottom: 0.5rem;
+        }
+
+        .role {
+            font-weight: 800;
+            color: var(--white);
+            text-transform: uppercase;
+            font-size: 0.8rem;
+            display: block;
+            margin-bottom: 0.2rem;
+        }
+        
+        /* --- Enhanced Community Wall (Dynamic Quotes) --- */
+        .community-section { 
+            background: var(--gradient-primary); 
+            position: relative;
+        }
+        .community-section h2 { color: var(--copper-foil); }
+        .community-section p { color: var(--soft-cream); }
+        
+        .quotes-grid { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+            gap: 2rem; 
+            margin-top: 3rem;
+        }
+        
+        .quote-card { 
+            background: rgba(74, 58, 74, 0.4);
+            backdrop-filter: blur(20px);
+            color: var(--soft-cream); 
+            padding: 2.5rem; 
+            border-radius: var(--border-radius-lg); 
+            font-style: italic; 
+            box-shadow: var(--shadow-medium); 
+            border-left: 6px solid var(--copper-foil); 
+            transition: var(--transition-smooth); 
+            position: relative; 
+            animation: fade-in-up 1s ease-out;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .quote-card::before { 
+            content: "“"; 
+            font-family: Georgia, serif; 
+            font-size: 5rem; 
+            color: var(--copper-foil); 
+            position: absolute; 
+            top: 10px; 
+            left: 15px; 
+            opacity: 0.3; 
+            line-height: 1;
+        }
+        
+        .quote-card:hover { 
+            transform: translateY(-10px) scale(1.02); 
+            border-left-color: var(--white); 
+            box-shadow: var(--shadow-strong);
+            background: rgba(74, 58, 74, 0.6);
+        }
+        
+        .quote-card p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .quote-author { 
+            font-style: normal; 
+            font-weight: 700; 
+            margin-top: 1.5rem; 
+            color: var(--white); 
+            text-align: right; 
+            font-size: 1rem;
+            background: var(--gradient-accent);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        /* --- Enhanced Newsletter & Social --- */
+        .contact-section { 
+            background: var(--gradient-accent); 
+            color: var(--white); 
+            border-top: 3px solid var(--copper-foil); 
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .contact-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="50" cy="50" r="1" fill="rgba(255,255,255,0.1)"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+            opacity: 0.1;
+        }
+        
+        .contact-section h2 { color: var(--white); }
+        .contact-section h2::after { background: var(--white); }
+        .contact-section p { color: var(--soft-cream); }
+        
+        .newsletter-form { 
+            display: flex; 
+            justify-content: center; 
+            align-items: center; 
+            flex-wrap: wrap; 
+            gap: 2rem; 
+            margin-top: 3rem; 
+            position: relative;
+            z-index: 1;
+        }
+        
+        .newsletter-form input { 
+            padding: 1.2rem 2rem; 
+            border: none; 
+            border-radius: var(--border-radius-lg); 
+            font-size: 1.1rem; 
+            width: 100%; 
+            max-width: 400px; 
+            transition: var(--transition-smooth); 
+            background: rgba(255, 255, 255, 0.95); 
+            color: var(--deep-plum); 
+            border: 2px solid transparent;
+            box-shadow: var(--shadow-soft);
+        }
+        
+        .newsletter-form input:focus { 
+            outline: none; 
+            box-shadow: var(--shadow-medium);
+            border-color: var(--white);
+            transform: translateY(-2px);
+        }
+        
+        .newsletter-form input::placeholder {
+            color: rgba(45, 27, 45, 0.6);
+        }
+        
+        .newsletter-form button { 
+            padding: 1.2rem 3rem; 
+            border: none; 
+            border-radius: var(--border-radius-lg); 
+            background: var(--deep-plum); 
+            color: var(--white); 
+            font-weight: 700; 
+            cursor: pointer; 
+            text-transform: uppercase; 
+            transition: var(--transition-bounce); 
+            font-size: 1rem;
+            letter-spacing: 1px;
+            box-shadow: var(--shadow-medium);
+            border: 2px solid var(--white);
+        }
+        
+        .newsletter-form button:hover { 
+            background: var(--white); 
+            color: var(--deep-plum);
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: var(--shadow-strong);
+        }
+        
+        /* --- Enhanced Footer --- */
+        .main-footer {
+            background: var(--gradient-primary);
+            color: var(--white);
+            text-align: center;
+            padding: 3rem 8%;
+            border-top: 2px solid var(--copper-foil);
+            position: relative;
+        }
+        
+        .main-footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: var(--gradient-accent);
+            opacity: 0.5;
+        }
+        
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 2rem;
+        }
+        
+        .footer-content p {
+            font-size: 1rem;
+            margin: 0;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 2rem;
+        }
+        
+        .social-links a {
+            color: var(--soft-cream);
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--transition-smooth);
+            padding: 0.5rem 1rem;
+            border-radius: var(--border-radius-sm);
+            position: relative;
+        }
+        
+        .social-links a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            width: 0;
+            height: 2px;
+            background: var(--gradient-accent);
+            transition: var(--transition-smooth);
+            transform: translateX(-50%);
+        }
+        
+        .social-links a:hover {
+            color: var(--copper-foil);
+            background: rgba(198, 123, 58, 0.1);
+            transform: translateY(-2px);
+        }
+        
+        .social-links a:hover::after {
+            width: 80%;
+        }
+        
+        /* --- Enhanced Responsive Design (Mobile First) --- */
+        @media (max-width: 1200px) {
+            .main-nav ul { gap: 2rem; }
+            .story-grid { grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); }
+            .quotes-grid { grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
+        }
+
+        @media (max-width: 768px) {
+            :root {
+                --border-radius-sm: 6px;
+                --border-radius-md: 12px;
+                --border-radius-lg: 18px;
+            }
+            
+            h1 { 
+                font-size: 2.5rem; 
+                margin-bottom: 1.5rem;
+            }
+            h2 { 
+                font-size: 2rem; 
+                margin-bottom: 2rem;
+            }
+            h3 {
+                font-size: 1.3rem;
+            }
+            
+            .hero-content { 
+                padding: 3rem 2rem; 
+                margin: 1rem;
+            }
+            
+            .main-header { 
+                flex-direction: column; 
+                padding: 1.5rem 5%; 
+                gap: 1rem;
+            }
+            
+            .main-nav ul { 
+                flex-wrap: wrap; 
+                justify-content: center; 
+                gap: 1.5rem; 
+            }
+            
+            section { 
+                padding: 4rem 5%; 
+            }
+            
+            .story-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            
+            .quotes-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+            
+            .documentary-grid {
+                flex-direction: column;
+                align-items: center;
+                gap: 2rem;
+            }
+            
+            .newsletter-form {
+                flex-direction: column;
+                align-items: stretch;
+                gap: 1.5rem;
+            }
+            
+            .newsletter-form input,
+            .newsletter-form button {
+                width: 100%;
+                max-width: none;
+            }
+            
+            .footer-content { 
+                flex-direction: column; 
+                gap: 1.5rem;
+                text-align: center;
+            }
+            
+            .social-links {
+                justify-content: center;
+            }
+            
+            .map-container-wrapper { 
+                flex-direction: column;
+                gap: 2rem; 
+            }
+            
+            .map-wrapper {
+                flex-basis: auto;
+                height: 400px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-content {
+                padding: 2rem 1.5rem;
+            }
+            
+            .hero-content h1 {
+                font-size: 2rem;
+            }
+            
+            .hero-content p {
+                font-size: 1.1rem;
+            }
+            
+            .story-text,
+            .documentary-info {
+                padding: 1.5rem;
+            }
+            
+            .quote-card {
+                padding: 2rem;
+            }
+            
+            .main-nav ul {
+                gap: 1rem;
+            }
+            
+            .main-nav a {
+                padding: 0.3rem 0.8rem;
+                font-size: 0.9rem;
+            }
+        }
+
+        /* --- Modern Scroll Animations --- */
+        @media (prefers-reduced-motion: no-preference) {
+            .story-card,
+            .quote-card,
+            .documentary-item {
+                opacity: 0;
+                transform: translateY(30px);
+                animation: fade-in-up 0.8s ease-out forwards;
+            }
+            
+            .story-card:nth-child(1) { animation-delay: 0.1s; }
+            .story-card:nth-child(2) { animation-delay: 0.2s; }
+            .story-card:nth-child(3) { animation-delay: 0.3s; }
+            
+            .quote-card:nth-child(1) { animation-delay: 0.1s; }
+            .quote-card:nth-child(2) { animation-delay: 0.2s; }
+            .quote-card:nth-child(3) { animation-delay: 0.3s; }
+            .quote-card:nth-child(4) { animation-delay: 0.4s; }
+            .quote-card:nth-child(5) { animation-delay: 0.5s; }
+            .quote-card:nth-child(6) { animation-delay: 0.6s; }
+            .quote-card:nth-child(7) { animation-delay: 0.7s; }
+            .quote-card:nth-child(8) { animation-delay: 0.8s; }
+        }
+
+        /* --- Accessibility Improvements --- */
+        @media (prefers-reduced-motion: reduce) {
+            * {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+
+        /* Focus styles for better accessibility */
+        .cta-button:focus,
+        .main-nav a:focus,
+        .read-more:focus,
+        .newsletter-form input:focus,
+        .newsletter-form button:focus {
+            outline: 3px solid var(--copper-foil);
+            outline-offset: 2px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- --- DYNAMIC STATE INFO CARDS (CSS :target MODALS) --- -->
+    <div class="state-info-card" id="kerala-card">
+        <div class="card-content">
+            <a href="#trailblazers" class="close-button" title="Close Card">&times;</a>
+            <h3 style="color: var(--copper-foil); font-size: 2rem;">Kerala</h3>
+            <p>3 inspiring women</p>
+            <div class="women-list">
+                <h4>Anna Chandy</h4><span class="role">JUDGE</span>
+                <p>First female judge in India (1937).</p>
+                <p>"Justice should be blind to gender."</p>
+                <h4>Arundhati Roy</h4><span class="role">AUTHOR</span>
+                <p>Booker Prize winner for 'The God of Small Things' (1997).</p>
+                <h4>P. T. Usha</h4><span class="role">ATHLETE</span>
+                <p>Known as the 'Queen of Indian Track and Field'.</p>
+            </div>
+        </div>
+    </div>
+    
+    <div class="state-info-card" id="maharashtra-card">
+        <div class="card-content">
+            <a href="#trailblazers" class="close-button" title="Close Card">&times;</a>
+            <h3 style="color: var(--copper-foil); font-size: 2rem;">Maharashtra</h3>
+            <p>2 inspiring women</p>
+            <div class="women-list">
+                <h4>Savitribai Phule</h4><span class="role">SOCIAL REFORMER</span>
+                <p>Pioneer of the feminist movement in India, opened one of the first girls' schools.</p>
+                <h4>Lata Mangeshkar</h4><span class="role">SINGER</span>
+                <p>Legendary playback singer, honored with the Bharat Ratna.</p>
+            </div>
+        </div>
+    </div>
+    
+    <div class="state-info-card" id="rajasthan-card">
+        <div class="card-content">
+            <a href="#trailblazers" class="close-button" title="Close Card">&times;</a>
+            <h3 style="color: var(--copper-foil); font-size: 2rem;">Rajasthan</h3>
+            <p>2 inspiring women</p>
+            <div class="women-list">
+                <h4>Ratan Shastri</h4><span class="role">EDUCATIONIST</span>
+                <p>Founder of Banasthali Vidyapith, promoting women's education.</p>
+                <h4>Avani Chaturvedi</h4><span class="role">PILOT</span>
+                <p>One of the first three female fighter pilots in the Indian Air Force.</p>
+            </div>
+        </div>
+    </div>
+    
+    <div class="state-info-card" id="gujarat-card">
+        <div class="card-content">
+            <a href="#trailblazers" class="close-button" title="Close Card">&times;</a>
+            <h3 style="color: var(--copper-foil); font-size: 2rem;">Gujarat</h3>
+            <p>2 inspiring women</p>
+            <div class="women-list">
+                <h4>Ela Bhatt</h4><span class="role">ACTIVIST / FOUNDER</span>
+                <p>Founder of the Self-Employed Women's Association (SEWA), championing worker's rights.</p>
+                <h4>Bhikaji Cama</h4><span class="role">FREEDOM FIGHTER</span
+                ><p>Pioneering figure in the Indian independence movement.</p>
+            </div>
+        </div>
+    </div>
+    
+    <div class="state-info-card" id="punjab-card">
+        <div class="card-content">
+            <a href="#trailblazers" class="close-button" title="Close Card">&times;</a>
+            <h3 style="color: var(--copper-foil); font-size: 2rem;">Punjab</h3>
+            <p>2 inspiring women</p>
+            <div class="women-list">
+                <h4>Amrita Pritam</h4><span class="role">POET / NOVELIST</span>
+                <p>Leading 20th century Punjabi writer, known for her powerful literary voice.</p>
+                <h4>Harmanpreet Kaur</h4><span class="role">CRICKETER</span>
+                <p>Captain of the Indian Women's Cricket Team, celebrated for her powerful hitting.</p>
+            </div>
+        </div>
+    </div>
+    
+    <div class="state-info-card" id="tamilnadu-card">
+        <div class="card-content">
+            <a href="#trailblazers" class="close-button" title="Close Card">&times;</a>
+            <h3 style="color: var(--copper-foil); font-size: 2rem;">Tamil Nadu</h3>
+            <p>2 inspiring women</p>
+            <div class="women-list">
+                <h4>M. S. Subbulakshmi</h4><span class="role">MUSICIAN</span>
+                <p>First musician to be awarded the Bharat Ratna; Carnatic music exponent.</p>
+                <h4>Indra Nooyi</h4><span class="role">BUSINESS LEADER</span>
+                <p>Former CEO and Chairwoman of PepsiCo.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="state-info-card" id="westbengal-card">
+        <div class="card-content">
+            <a href="#trailblazers" class="close-button" title="Close Card">&times;</a>
+            <h3 style="color: var(--copper-foil); font-size: 2rem;">West Bengal</h3>
+            <p>2 inspiring women</p>
+            <div class="women-list">
+                <h4>Mother Teresa</h4><span class="role">MISSIONARY</span>
+                <p>Nobel Peace Prize laureate, founder of the Missionaries of Charity.</p>
+                <h4>Kadambini Ganguly</h4><span class="role">DOCTOR</span>
+                <p>One of the first female graduates and female physicians in South Asia.</p>
+            </div>
+        </div>
+    </div>
+    
+    <div class="state-info-card" id="delhi-card">
+        <div class="card-content">
+            <a href="#trailblazers" class="close-button" title="Close Card">&times;</a>
+            <h3 style="color: var(--copper-foil); font-size: 2rem;">Delhi</h3>
+            <p>2 inspiring women</p>
+            <div class="women-list">
+                <h4>Kiran Bedi</h4><span class="role">POLICE OFFICER / POLITICIAN</span>
+                <p>First female officer in the Indian Police Service (IPS).</p>
+                <h4>Sheila Dikshit</h4><span class="role">POLITICIAN</span>
+                <p>Longest-serving Chief Minister of Delhi.</p>
+            </div>
+        </div>
+    </div>
+
+    <header class="main-header">
+        <div class="logo">HER VOICE</div>
+        <nav class="main-nav">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html#stories">Stories</a></li>
+                <li><a href="hub.html">Empowerment Hub</a></li>
+                <li><a href="portal.html">Share Your Story</a></li>
+                <li><a href="directory.html">Directory</a></li>
+                <li><a href="index.html#community">Community</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Hero Section with Video Background -->
+        <section class="hero-section" id="hero">
+            <video autoplay muted loop class="hero-video-background">
+                <!-- IMPORTANT: Replace with your actual video file path for cinematic effect -->
+                <source src="your-video.mp4.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <div class="hero-content">
+                <h1>Empowered Women Empower the World.</h1>
+                <p>When women support each other, incredible things happen.</p>
+                <a href="portal.html#registration-form" class="cta-button">Share Your Story</a>
+            </div>
+        </section>
+
+        <!-- Stories of Strength -->
+        <section class="stories-section" id="stories">
+            <h2>Stories of Strength</h2>
+            <div class="story-grid">
+                <!-- Story Card 1 -->
+                <div class="story-card">
+                    <img src= "https://imgs.search.brave.com/JFrtlYI51sVFY45cBzXLWuvaZPd3eZ-cBO2yR5odloE/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9pbWcu/dGhld2Vlay5pbi9j/b250ZW50L2RhbS93/ZWVrL3dlZWsvbWFn/YXppbmUvdGhld2Vl/ay9jb3Zlci9pbWFn/ZXMvMjAyNS8zLzgv/MzktQXJ1bmEtUm95/LmpwZw" alt="Portrait of a woman changemaker, representing diversity and inclusion" class="story-portrait">
+                    <div class="story-text">
+                        <h3>Aruna Roy, The Activist</h3>
+                        <p class="font-bold text-lg">"She believed she could, so she did."</p>
+                        <p style="color: var(--soft-cream);">Aruna Roy is an Indian social activist, professor, union organizer and former civil servant. She is the president of the National Federation of Indian Women and founder–member of the Mazdoor Kisan Shakti Sangathan.</p>
+                        <a href="https://en.wikipedia.org/wiki/Aruna_Roy" class="read-more">Read her journey &rarr;</a>
+                    </div>
+                </div>
+                <!-- Story Card 2 -->
+                <div class="story-card">
+                    <img src="https://imgs.search.brave.com/gqH-WuZvEvlmTXPw4bA4i3s9kFggjqtz2FVM1mQpyzM/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9tZWRp/YS5nZXR0eWltYWdl/cy5jb20vaWQvMTI0/NjQ2MjQ2NS9waG90/by9mYWxndW5pLW5h/eWFyLWZvdW5kZXIt/YW5kLWNoaWVmLWV4/ZWN1dGl2ZS1vZmZp/Y2VyLW9mLW55a2Fh/LXNwZWFrcy1kdXJp/bmctYW4taW50ZXJ2/aWV3LWF0LmpwZz9z/PTYxMng2MTImdz0w/Jms9MjAmYz16RkVJ/dnRncTBrVzd0MmI5/SjNOSEk4LTNyc3R0/Y2FuMUN1RFRmaTcx/UDdVPQ" alt="Portrait of a woman in tech, representing leadership" class="story-portrait">
+                    <div class="story-text">
+                        <h3>Falguni Nayar, Founder Nykaa</h3>
+                        <p class="font-bold text-lg">"Dream big but start small"</p>
+                        <p style="color: var(--soft-cream);">Former investment banker Falguni Nayar quit her job to start Nykaa - the online retailer of fashion and beauty products. Falguni Sanjay Nayar is one of two self-made female Indian billionaires. Nayar's accomplishments and success have made her an inspiration to other young business people in India and all around the world.</p>
+                        <a href="https://en.wikipedia.org/wiki/Falguni_Nayar" class="read-more">Read her challenge &rarr;</a>
+                    </div>
+                </div>
+                <!-- Story Card 3 -->
+                <div class="story-card">
+                    <img src="https://imgs.search.brave.com/6TKsvtW1hMEL971ht-P6RUmXRqUCnxExLqKugCL7uls/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9oaW5k/aS5jZG4uemVlbmV3/cy5jb20vaGluZGkv/c2l0ZXMvZGVmYXVs/dC9maWxlcy8yMDI0/LzAxLzI2LzI2MDEy/MTMtZGYtZ2R1LXZo/aXUtNDEuanBn" alt="Portrait of an older woman smiling, representing resilience" class="story-portrait">
+                    <div class="story-text">
+                        <h3>Dr. Prema Dhanraj, Founder Agni Raksha</h3>
+                        <p class="font-bold text-lg">"Resilience is learning to rise again."</p>
+                        <p style="color: var(--soft-cream);"> She founded the non-profit organization Agni Raksha in 1999, which focuses on the comprehensive rehabilitation of burn survivors, particularly from economically disadvantaged backgrounds.
+ The organization provides medical treatment, counseling, physiotherapy, legal aid, and vocational training, having served over 10,000 victims and identified more than 18,000 since its inception.</p>
+                        <a href="https://en.wikipedia.org/wiki/Prema_Dhanraj" class="read-more">Read her wisdom &rarr;</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Trailblazers of India Section -->
+        <section class="trailblazers-section" id="trailblazers">
+            <h2>Trailblazers of India</h2>
+            <p style="font-style: italic; max-width: 600px; margin: 0 auto 2rem; color: var(--soft-cream);">Click on any state pin on the map to discover the extraordinary women who shaped India's history.</p>
+            
+            <div class="map-container-wrapper">
+                <!-- 1. Simulated Interactive Map -->
+                <div class="map-wrapper">
+                    <div class="abstract-map">
+                        <a href="#kerala-card" class="map-state" id="kerala" title="Kerala">Kerala</a>
+                        <a href="#maharashtra-card" class="map-state" id="maharashtra" title="Maharashtra">Maharashtra</a>
+                        <a href="#westbengal-card" class="map-state" id="westbengal" title="West Bengal">West Bengal</a>
+                        <a href="#tamilnadu-card" class="map-state" id="tamilnadu" title="Tamil Nadu">Tamil Nadu</a>
+                        <a href="#delhi-card" class="map-state" id="delhi" title="Delhi">Delhi</a>
+                        <a href="#rajasthan-card" class="map-state" id="rajasthan" title="Rajasthan">Rajasthan</a>
+                        <a href="#gujarat-card" class="map-state" id="gujarat" title="Gujarat">Gujarat</a>
+                        <a href="#punjab-card" class="map-state" id="punjab" title="Punjab">Punjab</a>
+                    </div>
+                </div>
+                
+                <!-- 2. Info Card (Inline dynamic state details) -->
+                <div id="state-info-inline" class="card-content" style="max-width: 400px; padding: 2rem; border-left: 5px solid var(--copper-foil); background-color: var(--rich-mauve); box-shadow: 0 0 10px rgba(184, 115, 51, 0.2);">
+                    <h3 class="inline-state-title" style="color:var(--copper-foil);">Discover a State</h3>
+                    <p class="inline-state-summary" style="margin-top: 1rem; color: var(--white);">Click a highlighted state pin on the map to reveal its famous women pioneers in this box.</p>
+                    <div class="inline-state-body" style="font-size: 0.95rem; margin-top: 1rem; color: var(--soft-cream);">
+                        <p style="font-size: 0.85rem; color: var(--soft-cream);">Note: Click a pin to see the trailblazers.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Mini-Documentaries/Interviews -->
+        <section class="documentaries-section" id="interviews">
+            <h2>See Our Voices In Action</h2>
+            <div class="documentary-grid">
+                <!-- Documentary 1 -->
+                <div class="documentary-item">
+                    <video controls poster="Screenshot 2025-10-09 204913.png" title="Sudha Murthy">
+                        <source src="interview-1.mp4" type="video/mp4">
+                        <p>Your browser doesn't support HTML video.</p>
+                    </video>
+                    <div class="documentary-info">
+                        <h3>Sudha Murthy's interview in London</h3>
+                        <p style="color: var(--soft-cream);">Hear from Sudha Murthy about her untold stories.</p>
+                    </div>
+                </div>
+                <!-- Documentary 2 -->
+                <div class="documentary-item">
+                    <video controls poster="Screenshot 2025-10-09 210143.png" title="Priyanka Chopra">
+                        <source src="minidoc-2.mp4" type="video/mp4">
+                        <p>Your browser doesn't support HTML video.</p>
+                    </video>
+                    <div class="documentary-info">
+                        <h3>Priyanka Chopra at BBC International</h3>
+                        <p style="color: var(--soft-cream);">Here about social media from Priyanka Chopra.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Community Wall (Voices/Quotes) -->
+        <section class="community-section" id="community">
+            <h2>Voices</h2>
+            <div class="quotes-grid">
+                <div class="quote-card">
+                    <p>“A woman’s voice is her greatest strength; let it be heard with courage and conviction.”</p>
+                    <p class="quote-author">- Jaya Kishori</p>
+                </div>
+                <div class="quote-card">
+                    <p>“To be liberated, woman must feel free to be herself, not in rivalry to man but in the context of her own capacity and her personality.”</p>
+                    <p class="quote-author">- Indra Gandhi</p>
+                </div>
+                <div class="quote-card">
+                    <p>“A country’s greatness lies in its undying ideals of love and sacrifice that inspire the mothers of the race”</p>
+                    <p class="quote-author">- Sarojini Naidu</p>
+                </div>
+                <div class="quote-card">
+                    <p>“If you want to do something, what does it matter where you are ranked? Nor does being a woman make a difference.”</p>
+                    <p class="quote-author">- Kalpana Chawla</p>
+                </div>
+                <div class="quote-card">
+                    <p>“If you do not build your dream, someone else will hire you to help them build theirs.”</p>
+                    <p class="quote-author">- Nita Ambani</p>
+                </div>
+                 <div class="quote-card">
+                    <p>“I dare because I care.”</p>
+                    <p class="quote-author">- Kiran Bedi</p>
+                </div>
+                <div class="quote-card">
+                    <p>“There is no competition between men and women. It’s a partnership.”</p>
+                    <p class="quote-author">- Sudha Murthy</p>
+                </div>
+                <div class="quote-card">
+                    <p>“Be bold, be brave, be free.”</p>
+                    <p class="quote-author">- Priyanka Chopra</p>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Call to Action / Newsletter -->
+        <section class="contact-section" id="contact">
+            <div class="contact-content">
+                <h2>Join The Movement</h2>
+                <p>Sign up for our newsletter to get inspiring stories, resources, and updates delivered right to your inbox. Your journey starts now.</p>
+                <form action="#" class="newsletter-form">
+                    <input type="email" placeholder="Enter your email address..." required>
+                    <button type="submit">Subscribe & Inspire</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer class="main-footer">
+        <div class="footer-content">
+            <p>&copy; 2025 HER VOICE. All rights reserved. | <span style="color:var(--copper-foil);">Lead. Inspire. Create.</span></p>
+            <div class="social-links">
+                <a href="#">Instagram</a>
+                <a href="hub.html">Resources</a>
+            </div>
+        </div>
+    </footer>
+
+     <!-- Modern JavaScript Enhancements + Map Inline Details Wiring -->
+     <script>
+        // Smooth scrolling for navigation links
+        document.addEventListener('DOMContentLoaded', function() {
+            // Header scroll effect
+            const header = document.querySelector('.main-header');
+            let lastScrollY = window.scrollY;
+            
+            window.addEventListener('scroll', () => {
+                const currentScrollY = window.scrollY;
+                
+                if (currentScrollY > 100) {
+                    header.classList.add('scrolled');
+                } else {
+                    header.classList.remove('scrolled');
+                }
+                
+                lastScrollY = currentScrollY;
+            });
+
+            // Smooth scroll for anchor links
+            const anchorLinks = document.querySelectorAll('a[href^="#"]');
+            anchorLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    const targetElement = document.querySelector(targetId);
+                    
+                    if (targetElement) {
+                        targetElement.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
+            });
+
+             // Intersection Observer for scroll animations
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, observerOptions);
+
+            // Observe elements for scroll animations
+            const animatedElements = document.querySelectorAll('.story-card, .quote-card, .documentary-item');
+            animatedElements.forEach(el => {
+                el.style.opacity = '0';
+                el.style.transform = 'translateY(30px)';
+                el.style.transition = 'opacity 0.8s ease-out, transform 0.8s ease-out';
+                observer.observe(el);
+            });
+
+            // Newsletter form enhancement
+            const newsletterForm = document.querySelector('.newsletter-form');
+            if (newsletterForm) {
+                newsletterForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    const email = this.querySelector('input[type="email"]').value;
+                    
+                    if (email) {
+                        // Add success animation
+                        const button = this.querySelector('button');
+                        const originalText = button.textContent;
+                        button.textContent = 'Subscribed!';
+                        button.style.background = 'var(--copper-foil)';
+                        
+                        setTimeout(() => {
+                            button.textContent = originalText;
+                            button.style.background = '';
+                            this.querySelector('input[type="email"]').value = '';
+                        }, 2000);
+                    }
+                });
+            }
+
+            // Add loading state for images with cached/failed handling
+            const images = document.querySelectorAll('img');
+            images.forEach(img => {
+                const show = () => { img.style.opacity = '1'; };
+                const hide = () => { img.style.opacity = '0'; };
+                img.style.transition = 'opacity 0.5s ease-in-out';
+
+                if (img.complete && img.naturalWidth > 0) {
+                    show();
+                } else {
+                    hide();
+                    img.addEventListener('load', show, { once: true });
+                    img.addEventListener('error', show, { once: true });
+                }
+            });
+
+            // Enhanced hover effects for cards
+            const cards = document.querySelectorAll('.story-card, .quote-card, .documentary-item');
+            cards.forEach(card => {
+                card.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateY(-10px) scale(1.02)';
+                });
+                
+                card.addEventListener('mouseleave', function() {
+                    this.style.transform = 'translateY(0) scale(1)';
+                });
+            });
+
+             // Parallax effect for hero section
+            const heroSection = document.querySelector('.hero-section');
+            if (heroSection) {
+                window.addEventListener('scroll', () => {
+                    const scrolled = window.pageYOffset;
+                    const parallax = scrolled * 0.5;
+                    heroSection.style.transform = `translateY(${parallax}px)`;
+                });
+            }
+
+             // Inline map details: copy content from hidden cards into inline panel
+             const inlinePanel = document.getElementById('state-info-inline');
+             const inlineTitle = inlinePanel?.querySelector('.inline-state-title');
+             const inlineSummary = inlinePanel?.querySelector('.inline-state-summary');
+             const inlineBody = inlinePanel?.querySelector('.inline-state-body');
+
+             const mapPins = document.querySelectorAll('.map-state');
+             const idMap = {
+                 kerala: 'kerala-card',
+                 maharashtra: 'maharashtra-card',
+                 rajasthan: 'rajasthan-card',
+                 gujarat: 'gujarat-card',
+                 punjab: 'punjab-card',
+                 tamilnadu: 'tamilnadu-card',
+                 westbengal: 'westbengal-card',
+                 delhi: 'delhi-card'
+             };
+
+             function updateInlinePanel(stateId) {
+                 if (!inlinePanel || !inlineTitle || !inlineSummary || !inlineBody) return;
+                 const cardId = idMap[stateId];
+                 if (!cardId) return;
+                 const sourceCard = document.getElementById(cardId);
+                 if (!sourceCard) return;
+
+                 const titleEl = sourceCard.querySelector('h3');
+                 const countEl = sourceCard.querySelector('p');
+                 const listEl = sourceCard.querySelector('.women-list');
+
+                 inlineTitle.textContent = titleEl ? titleEl.textContent : 'Trailblazers';
+                 inlineSummary.textContent = countEl ? countEl.textContent : '';
+                 inlineBody.innerHTML = listEl ? listEl.innerHTML : '';
+
+                 // Focus for accessibility
+                 inlinePanel.setAttribute('tabindex', '-1');
+                 inlinePanel.focus({ preventScroll: true });
+             }
+
+             mapPins.forEach(pin => {
+                 // Use click for mouse/touch
+                 pin.addEventListener('click', (e) => {
+                     e.preventDefault();
+                     const id = pin.id;
+                     updateInlinePanel(id);
+                 });
+                 // Keyboard activation
+                 pin.setAttribute('role', 'button');
+                 pin.setAttribute('tabindex', '0');
+                 pin.addEventListener('keydown', (e) => {
+                     if (e.key === 'Enter' || e.key === ' ') {
+                         e.preventDefault();
+                         updateInlinePanel(pin.id);
+                     }
+                 });
+             });
+
+            // Add keyboard navigation support
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Tab') {
+                    document.body.classList.add('keyboard-navigation');
+                }
+            });
+
+            document.addEventListener('mousedown', function() {
+                document.body.classList.remove('keyboard-navigation');
+            });
+        });
+
+        // Add CSS for keyboard navigation
+        const style = document.createElement('style');
+        style.textContent = `
+            .keyboard-navigation *:focus {
+                outline: 3px solid var(--copper-foil) !important;
+                outline-offset: 2px !important;
+            }
+        `;
+        document.head.appendChild(style);
+    </script>
+
+</body>
+</html>

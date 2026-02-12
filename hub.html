@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Empowerment Hub | Resources & Mentorship</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Playfair+Display:wght@400;700&family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
+
+    <!-- CSS Styling (Pure CSS & HTML Only) - Deep Plum & Copper Foil Theme -->
+    <style>
+        /* --- Global Styles & Typography (DEEP PLUM & COPPER FOIL THEME) --- */
+        :root {
+            --deep-plum: #3B1F3B;         
+            --rich-mauve: #5E455E;        
+            --soft-cream: #F0EBE3;        
+            --copper-foil: #B87333;       
+            --white: #FFFFFF;             
+        }
+
+        /* --- Keyframe Animations --- */
+        @keyframes fade-in {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes subtle-shine { 
+            0% { text-shadow: 0 0 5px var(--copper-foil), 0 0 10px rgba(255, 255, 255, 0); }
+            50% { text-shadow: 0 0 8px var(--copper-foil), 0 0 15px rgba(255, 255, 255, 0.4); }
+            100% { text-shadow: 0 0 5px var(--copper-foil), 0 0 10px rgba(255, 255, 255, 0); }
+        }
+        
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            transition: background-color 0.4s ease, color 0.4s ease, border-color 0.4s ease, transform 0.4s ease;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: var(--soft-cream);
+            background-color: var(--deep-plum);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 800;
+        }
+
+        h2 {
+            font-size: clamp(1.8rem, 4vw, 3rem);
+            text-align: center;
+            margin-bottom: 2.5rem;
+            position: relative;
+            padding-bottom: 0.5rem;
+            color: var(--copper-foil);
+            animation: fade-in 1s ease-out;
+        }
+
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 5px;
+            background-color: var(--copper-foil);
+            border-radius: 5px;
+            box-shadow: 0 0 15px rgba(184, 115, 51, 1);
+        }
+
+        p {
+            font-family: 'Poppins', sans-serif;
+            color: var(--soft-cream);
+        }
+        
+        section {
+            padding: 5rem 8%;
+            background-color: var(--deep-plum);
+            animation: fade-in 1.2s ease-out;
+            border-bottom: 1px solid rgba(240, 235, 227, 0.1); 
+        }
+
+        /* --- Header & Navigation --- */
+        .main-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.5rem 8%;
+            background-color: var(--rich-mauve);
+            color: var(--white);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.9);
+            border-bottom: 3px solid var(--copper-foil);
+        }
+
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: var(--copper-foil);
+            letter-spacing: 2px;
+            animation: subtle-shine 4s infinite ease-in-out; 
+        }
+
+        .main-nav ul {
+            list-style: none;
+            display: flex;
+            gap: 2.5rem;
+        }
+
+        .main-nav a {
+            text-decoration: none;
+            color: var(--soft-cream);
+            font-weight: 600;
+            transition: all 0.3s ease;
+            padding-bottom: 4px;
+        }
+        
+        .main-nav a[href="hub.html"] {
+            border-bottom: 2px solid var(--copper-foil);
+            color: var(--copper-foil);
+            text-shadow: 0 0 8px rgba(184, 115, 51, 0.7);
+        }
+
+        .main-nav a:hover {
+            color: var(--copper-foil);
+            border-bottom: 2px solid var(--copper-foil);
+            transform: translateY(-2px);
+        }
+
+        /* --- Hub Grid Styles (Dynamic Hover) --- */
+        .hub-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin: 3rem 0;
+        }
+
+        .hub-item {
+            background-color: var(--rich-mauve);
+            color: var(--soft-cream);
+            border-radius: 15px;
+            padding: 2.5rem;
+            text-align: center;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
+            border: 2px solid var(--rich-mauve);
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+        }
+
+        .hub-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.7), 0 0 40px var(--copper-foil);
+            border-color: var(--copper-foil);
+        }
+
+        .hub-item h3 {
+            color: var(--white);
+            font-family: 'Libre Baskerville', serif;
+            font-size: 1.8rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .hub-item p {
+            color: var(--soft-cream);
+            margin-bottom: 1.5rem;
+        }
+
+        .hub-link {
+            color: var(--copper-foil);
+            text-decoration: none;
+            font-weight: 700;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .hub-link::after { 
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--copper-foil);
+            transition: width 0.3s ease-out;
+        }
+
+        .hub-link:hover {
+            color: var(--white);
+        }
+        
+        .hub-link:hover::after {
+            width: 100%;
+        }
+
+        /* --- Resource List Styles --- */
+        .resource-list {
+            list-style: none;
+            max-width: 800px;
+            margin: 2rem auto;
+            text-align: left;
+        }
+
+        .resource-list li {
+            background-color: var(--rich-mauve);
+            margin-bottom: 15px;
+            padding: 20px;
+            border-radius: 10px;
+            border-left: 8px solid var(--copper-foil); /* Stronger left border */
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+            transition: transform 0.4s ease, border-left-color 0.4s ease;
+        }
+        .resource-list li:hover {
+            transform: translateX(15px); /* Stronger slide effect */
+            border-left-color: var(--white);
+        }
+
+        .resource-list a {
+            color: var(--soft-cream);
+            text-decoration: none;
+            font-weight: 600;
+            position: relative;
+        }
+        .resource-list a:hover {
+            color: var(--copper-foil);
+        }
+        
+        /* --- Mentorship Section Styles --- */
+        .mentorship-program {
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        .mentorship-program h3 {
+            color: var(--copper-foil);
+            font-family: 'Playfair Display', serif;
+            margin-top: 2rem;
+        }
+
+        .mentorship-program .steps {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            margin-top: 2rem;
+            gap: 25px;
+        }
+
+        .mentorship-program .step-card {
+            flex-basis: 250px;
+            background-color: var(--rich-mauve);
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
+            border-top: 5px solid var(--copper-foil); /* Stronger border */
+            transition: transform 0.4s ease, border-top-color 0.4s ease;
+        }
+        .mentorship-program .step-card:hover {
+            transform: translateY(-8px) scale(1.02);
+            border-top-color: var(--white);
+        }
+
+        /* --- Footer --- */
+        .main-footer {
+            background-color: var(--rich-mauve);
+            color: var(--white);
+            text-align: center;
+            padding: 2rem 8%;
+            border-top: 5px solid var(--copper-foil);
+        }
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+        }
+        .social-links a {
+            color: var(--white);
+            text-decoration: none;
+            margin-left: 1.5rem;
+            font-weight: 600;
+        }
+        .social-links a:hover {
+            color: var(--copper-foil);
+            text-shadow: 0 0 5px var(--copper-foil);
+        }
+        
+        /* --- Responsive Design (Mobile First) --- */
+        @media (max-width: 768px) {
+            h2 { font-size: 2rem; }
+            .main-header { flex-direction: column; padding: 1rem 5%; }
+            .main-nav ul { flex-wrap: wrap; justify-content: center; margin-top: 1rem; gap: 1rem; }
+            section { padding: 3rem 5%; }
+            .footer-content { flex-direction: column; }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="main-header">
+        <div class="logo">HER VOICE</div>
+        <nav class="main-nav">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html#stories">Stories</a></li>
+                <li><a href="hub.html">Empowerment Hub</a></li>
+                <li><a href="portal.html">Share Your Story</a></li>
+                <li><a href="directory.html">Directory</a></li>
+                <li><a href="index.html#community">Community</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Empowerment Hub Intro -->
+        <section>
+            <h2>Empowerment Hub</h2>
+            <p style="text-align: center; max-width: 800px; margin: 0 auto 3rem; color: var(--soft-cream);">
+                Your source for growth. We provide the tools, mentorship, and community needed to rise in every aspect of life.
+            </p>
+
+            <div class="hub-grid">
+                <!-- Workshops -->
+                <a href="#workshops" class="hub-item" style="text-decoration: none;">
+                    <h3>Workshops & Resources</h3>
+                    <p>Leadership guides, financial literacy, and coding for women.</p>
+                    <span class="hub-link">Explore Resources &rarr;</span>
+                </a>
+                <!-- Mentorship -->
+                <a href="#mentorship" class="hub-item" style="text-decoration: none;">
+                    <h3>Mentorship Program</h3>
+                    <p>Connect with experienced mentors who can guide you on your journey.</p>
+                    <span class="hub-link">Learn More &rarr;</span>
+                </a>
+                <!-- Directory -->
+                <a href="directory.html" class="hub-item" style="text-decoration: none;">
+                    <h3>Women-led Businesses</h3>
+                    <p>Browse our directory and support women entrepreneurs in your community.</p>
+                    <span class="hub-link">View Directory &rarr;</span>
+                </a>
+            </div>
+        </section>
+
+        <!-- Workshops & Resources Detail Section (Internal Link Target) -->
+        <section id="workshops" style="background-color: var(--deep-plum);">
+            <h2 style="color: var(--copper-foil);">Workshops & Guides</h2>
+            <p style="text-align: center; max-width: 700px; margin: 0 auto 2rem; color: var(--soft-cream);">
+                Download our free guides and join upcoming virtual workshops designed for your professional and personal development.
+            </p>
+            <ul class="resource-list">
+                <li><a href="Leadership Mastery.pdf">Leadership Mastery: A Guide to Confident Decision-Making </a></li>
+                <li><a href="Financial Freedom.pdf">Financial Freedom: Budgeting and Investing for Women </a></li>
+                <li><a href="Code Your Future.pdf">Code Your Future: Intro to Web Development Workshop </a></li>
+                <li><a href="Self defence.pdf">Self-Defense Fundamentals: Protecting Your Space and Voice </a></li>
+            </ul>
+        </section>
+
+        <!-- Mentorship Program Detail Section (Internal Link Target) -->
+        <section id="mentorship" style="background-color: var(--rich-mauve);">
+            <div class="mentorship-program">
+                <h2 style="color: var(--copper-foil);">The Mentorship Journey</h2>
+                <p style="color: var(--soft-cream);">
+                    Our structured mentorship program pairs you with a seasoned professional in your field for 6 months of focused growth.
+                </p>
+                <ul class="resource-list">
+                    <li><a href="https://www.youtube.com/watch?v=ZUFtbEyg6gY&pp=ygUcd29tZW4gZW1wb3dlcm1lbnQgbWVudG9yc2hpcA%3D%3D"> Mentorship lecture - 1</a> </li>
+                    <li><a href="https://youtu.be/kGYEWl3iCQQ?si=NtHlD5EvUV9MyMFD"> Mentorship lecture-2</a> </li>
+                </ul>
+                <p>For more such classes please register yourself.</p>
+        
+                
+                <div class="steps">
+                    <div class="step-card">
+                        <h3 style="color: var(--copper-foil);">Step 1: Apply</h3>
+                        <p style="color: var(--soft-cream); font-size: 0.9rem;">Submit your profile, goals, and experience level via the portal.</p>
+                    </div>
+                    <div class="step-card">
+                        <h3 style="color: var(--copper-foil);">Step 2: Match</h3>
+                        <p style="color: var(--soft-cream); font-size: 0.9rem;">Our team expertly pairs you with a suitable mentor based on career alignment.</p>
+                    </div>
+                    <div class="step-card">
+                        <h3 style="color: var(--copper-foil);">Step 3: Thrive</h3>
+                        <p style="color: var(--soft-cream); font-size: 0.9rem;">Begin your 1:1 sessions and leverage professional guidance to achieve success.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="main-footer">
+        <div class="footer-content">
+            <p>&copy; 2025 HER VOICE. All rights reserved. | <span style="color:var(--copper-foil);">Lead. Inspire. Create.</span></p>
+            <div class="social-links">
+                <a href="#">Instagram</a>
+                <a href="hub.html">Resources</a>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

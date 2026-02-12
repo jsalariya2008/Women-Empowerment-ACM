@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Women-Led Business Directory</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Playfair+Display:wght@400;700&family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
+
+    <!-- CSS Styling (Pure CSS & HTML Only) - Deep Plum & Copper Foil Theme -->
+    <style>
+        /* --- Global Styles & Typography (DEEP PLUM & COPPER FOIL THEME) --- */
+        :root {
+            --deep-plum: #3B1F3B;         
+            --rich-mauve: #5E455E;        
+            --soft-cream: #F0EBE3;        
+            --copper-foil: #B87333;       
+            --white: #FFFFFF;             
+        }
+
+        /* --- Keyframe Animations --- */
+        @keyframes fade-in {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes subtle-shine { 
+            0% { text-shadow: 0 0 5px var(--copper-foil), 0 0 10px rgba(255, 255, 255, 0); }
+            50% { text-shadow: 0 0 8px var(--copper-foil), 0 0 15px rgba(255, 255, 255, 0.4); }
+            100% { text-shadow: 0 0 5px var(--copper-foil), 0 0 10px rgba(255, 255, 255, 0); }
+        }
+        
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            transition: background-color 0.4s ease, color 0.4s ease, border-color 0.4s ease, transform 0.4s ease;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: var(--soft-cream);
+            background-color: var(--deep-plum);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 800;
+        }
+
+        h2 {
+            font-size: clamp(1.8rem, 4vw, 3rem);
+            text-align: center;
+            margin-bottom: 2.5rem;
+            position: relative;
+            padding-bottom: 0.5rem;
+            color: var(--copper-foil);
+            animation: fade-in 1s ease-out;
+        }
+
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 5px;
+            background-color: var(--copper-foil);
+            border-radius: 5px;
+            box-shadow: 0 0 15px rgba(184, 115, 51, 1);
+        }
+
+        p {
+            font-family: 'Poppins', sans-serif;
+            color: var(--soft-cream);
+        }
+        
+        section {
+            padding: 5rem 8%;
+            background-color: var(--deep-plum);
+            animation: fade-in 1.2s ease-out;
+            border-bottom: 1px solid rgba(240, 235, 227, 0.1); 
+        }
+
+        /* --- Header & Navigation --- */
+        .main-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.5rem 8%;
+            background-color: var(--rich-mauve);
+            color: var(--white);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.9);
+            border-bottom: 3px solid var(--copper-foil);
+        }
+
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: var(--copper-foil);
+            letter-spacing: 2px;
+            animation: subtle-shine 4s infinite ease-in-out; 
+        }
+
+        .main-nav ul {
+            list-style: none;
+            display: flex;
+            gap: 2.5rem;
+        }
+
+        .main-nav a {
+            text-decoration: none;
+            color: var(--soft-cream);
+            font-weight: 600;
+            transition: all 0.3s ease;
+            padding-bottom: 4px;
+        }
+        
+        .main-nav a[href="directory.html"] {
+            border-bottom: 2px solid var(--copper-foil);
+            color: var(--copper-foil);
+            text-shadow: 0 0 8px rgba(184, 115, 51, 0.7);
+        }
+
+        .main-nav a:hover {
+            color: var(--copper-foil);
+            border-bottom: 2px solid var(--copper-foil);
+            transform: translateY(-2px);
+        }
+
+        /* --- Directory Grid Styles (Dynamic Hover) --- */
+        .directory-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 3rem;
+        }
+
+        .business-card {
+            background-color: var(--rich-mauve);
+            color: var(--soft-cream);
+            border-radius: 15px;
+            padding: 2.5rem;
+            text-align: left;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
+            border: 2px solid var(--rich-mauve);
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+        }
+
+        .business-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.7), 0 0 40px var(--copper-foil);
+            border-color: var(--copper-foil);
+        }
+
+        .business-card h3 {
+            color: var(--white);
+            font-family: 'Libre Baskerville', serif;
+            font-size: 1.8rem;
+            margin-bottom: 0.75rem;
+        }
+        
+        .business-card .category {
+            color: var(--copper-foil);
+            font-weight: 600;
+            display: block;
+            margin-bottom: 10px;
+            font-size: 0.9rem;
+        }
+
+        .contact-link {
+            color: var(--copper-foil);
+            text-decoration: none;
+            font-weight: 700;
+            position: relative;
+            display: inline-block;
+            margin-top: 1rem;
+        }
+        
+        .contact-link::after { 
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--copper-foil);
+            transition: width 0.3s ease-out;
+        }
+
+        .contact-link:hover {
+            color: var(--white);
+        }
+        
+        .contact-link:hover::after {
+            width: 100%;
+        }
+
+        /* --- Footer --- */
+        .main-footer {
+            background-color: var(--rich-mauve);
+            color: var(--white);
+            text-align: center;
+            padding: 2rem 8%;
+            border-top: 5px solid var(--copper-foil);
+        }
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+        }
+        .social-links a {
+            color: var(--white);
+            text-decoration: none;
+            margin-left: 1.5rem;
+            font-weight: 600;
+        }
+        .social-links a:hover {
+            color: var(--copper-foil);
+            text-shadow: 0 0 5px var(--copper-foil);
+        }
+        
+        /* --- Responsive Design (Mobile First) --- */
+        @media (max-width: 768px) {
+            h2 { font-size: 2rem; }
+            .main-header { flex-direction: column; padding: 1rem 5%; }
+            .main-nav ul { flex-wrap: wrap; justify-content: center; margin-top: 1rem; gap: 1rem; }
+            section { padding: 3rem 5%; }
+            .footer-content { flex-direction: column; }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="main-header">
+        <div class="logo">HER VOICE</div>
+        <nav class="main-nav">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html#stories">Stories</a></li>
+                <li><a href="hub.html">Empowerment Hub</a></li>
+                <li><a href="portal.html">Share Your Story</a></li>
+                <li><a href="directory.html">Directory</a></li>
+                <li><a href="index.html#community">Community</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section>
+            <h2>Women-Led Business Directory</h2>
+            <p style="text-align: center; max-width: 800px; margin: 0 auto 3rem; color: var(--soft-cream);">
+                Support and connect with powerful women entrepreneurs globally. Discover innovation across all industries.
+            </p>
+
+            <div class="directory-grid">
+                <!-- Sample Business 1 -->
+                <div class="business-card">
+                    <h3>Akka Café</h3>
+                    <span class="category">Food & Cafe</span>
+                    <p>Akka Café is an initiative under the National Livelihood Mission, managed by women’s self-help groups like Kamadhenu Women's SHG. These cafés offer hygienic, local food at affordable prices, promoting women's economic empowerment in rural areas.</p>
+                    <a href="https://www.instagram.com/reel/C4fBFKgyaDi/" class="contact-link">Contact &rarr;</a>
+                </div>
+                <!-- Sample Business 2 -->
+                <div class="business-card">
+                    <h3>PoshVine</h3>
+                    <span class="category">Payment app </span>
+                    <p>Founded in 2011 by Garima Satija, PoshVine is a marketplace offering off-the-beaten-track dining and travel experiences, catering to travelers seeking unique adventures.</p>
+                    <a href="https://visarewards.poshvine.com/" class="contact-link">Visit Website &rarr;</a>
+                </div>
+                <!-- Sample Business 3 -->
+                <div class="business-card">
+                    <h3>Mann Deshi Mahila Sahakari Bank</h3>
+                    <span class="category">Financial Inclusion & Empowerment</span>
+                    <p>Chetna Gala Sinha founded Mann Deshi Mahila Sahakari Bank, India's first rural women's bank, providing financial services and loans to women entrepreneurs. This initiative has supported numerous women-led businesses, fostering economic independence.</p>
+                    <a href="https://manndeshibank.com/" class="contact-link">View Services &rarr;</a>
+                </div>
+                <!-- Sample Business 4 -->
+                <div class="business-card">
+                    <h3>The Mushroom Lady</h3>
+                    <span class="category">Farming & Cultivation</span>
+                    <p>Bina Devi, known as 'The Mushroom Lady,' started cultivating mushrooms under her bed due to lack of space. Her success led her to inspire over 1,500 women in 105 villages to take up mushroom farming. She was honored with the Nari Shakti Samman for her contribution to agriculture.</p>
+                    <a href="https://www.instagram.com/mushroom_divyarawat/" class="contact-link">Contact &rarr;</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="main-footer">
+        <div class="footer-content">
+            <p>&copy; 2025 HER VOICE. All rights reserved. | <span style="color:var(--copper-foil);">Lead. Inspire. Create.</span></p>
+            <div class="social-links">
+                <a href="#">Instagram</a
+                <a href="hub.html">Resources</a>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
